@@ -17,8 +17,19 @@ from django.conf.urls import url
 from django.contrib import admin
 # from django.conf.urls.defaults import *
 from djangoDemoNew.view import hello
+from jsondataview import getJson
+from htmlpageview import getHtmlIndex
+import dynhtmlpageview
+import ajaxhtmlview
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^hello/$', hello),
+    url(r'^json/$', getJson),
+    url(r'^html/$', getHtmlIndex),
+    url(r'^dynhtml/$', dynhtmlpageview.getDynIndex),
+    url(r'^submitdynhtml/$', dynhtmlpageview.gosubmitdynhtml),
+    url(r'^getAjaxIndex/$', ajaxhtmlview.getAjaxIndex),
+    url(r'^ajaxPost', ajaxhtmlview.getAjaxPost),
+    url(r'^ajaxGet', ajaxhtmlview.getAjaxGet),
 ]
