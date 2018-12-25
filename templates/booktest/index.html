@@ -1,0 +1,15 @@
+<html>
+<head>
+    <title>Python-mysql操作</title>
+</head>
+<body>
+<a href="/addBook/">创建</a>
+<ul>
+{%for book in books%}
+
+<li>{{book.btitle}}--<a href="/delBook/{{book.id}}">删除</a></li>
+
+{%endfor%}
+</ul>
+</body>
+</html>
