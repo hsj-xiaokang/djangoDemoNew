@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
-from datetime import date
+from datetime import date,datetime
+
+
 from django.shortcuts import render,redirect
 from booktest.models import BookInfo
 #导入`connection`
@@ -15,8 +17,8 @@ def index(request):
 # 新增图书视图视图函数
 def addBook(request):
     book=BookInfo()
-    book.btitle=u'mysql操作_auto_自动'
-    book.bpub_date=date(2017,6,27)
+    book.btitle=u'mysql操作_auto_自动_lby'
+    book.bpub_date=datetime.now()
     book.save()
     # return HttpResponse('ok')
     # sql操作

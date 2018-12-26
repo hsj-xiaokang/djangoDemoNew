@@ -21,10 +21,11 @@ from jsondataview import getJson
 from htmlpageview import getHtmlIndex
 import dynhtmlpageview
 import ajaxhtmlview
+import authview
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^hello/$', hello),
+    url(r'^hello/.*', hello),
     url(r'^json/$', getJson),
     url(r'^html/$', getHtmlIndex),
     url(r'^dynhtml/$', dynhtmlpageview.getDynIndex),
@@ -32,5 +33,10 @@ urlpatterns = [
     url(r'^getAjaxIndex/$', ajaxhtmlview.getAjaxIndex),
     url(r'^ajaxPost', ajaxhtmlview.getAjaxPost),
     url(r'^ajaxGet', ajaxhtmlview.getAjaxGet),
+    url(r'^createAuthUser', authview.createAuthUser),
+    url(r'^getAuthIndex', authview.getAuthIndex),
+    url(r'^logoutOp', authview.logoutOp),
+    url(r'^loginOp', authview.loginOp),
+    url(r'^loginCanAccess', authview.loginCanAccess),
     url(r'^', include('booktest.urls'))
 ]
